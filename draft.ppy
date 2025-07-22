@@ -1,0 +1,77 @@
+import streamlit as st
+import pandas as pd
+
+# -------------------------------
+# Utility: Load CSVs into dictionaries
+# -------------------------------
+def load_lookup_table(file_path):
+    df = pd.read_csv(file_path, header=None)
+    return {str(v).strip(): str(k).strip() for k, v in zip(df.iloc[:, 1], df.iloc[:, 0])}
+
+# -------------------------------
+# Decoder Functions for Each Product Type
+# -------------------------------
+def decode_non_illuminated_pushbutton(catalog_number):
+    # Load lookup tables
+    operator_dict = load_lookup_table("NonIlluminatedPushbuttonOperator.csv")
+    color_dict = load_lookup_table("NonIlluminatedPushbuttonButtonColor.csv")
+    circuit_dict = load_lookup_table("NonIlluminatedPushbuttonCircuit.csv")
+
+    # Normalize input
+    normalized = catalog_number.replace("-", "").strip().upper()
+    if not normalized.startswith("10250T") or len(normalized) < 10:
+        st.error("Invalid catalog number format.")
+        return
+
+    code_part = normalized[6:]
+    operator_code = code_part[:2]
+    color_code = code_part[2]
+    circuit_code = code_part[3:]
+
+    # Decode
+    operator_label = operator_dict.get(operator_code, "Unknown Operator Code")
+    color_label = color_dict.get(color_code, "Unknown Color Code")
+    circuit_label = circuit_dict.get(circuit_code, "Unknown Circuit Code")
+
+    # Display
+    st.markdown("### ✅ Decoded Result")
+    st.write(f"**Operator Type**: {operator_label}")
+    st.write(f"**Button Color**: {color_label}")
+    st.write(f"**Circuit Type**: {circuit_label}")
+    st.markdown("### 🧩 Component Part Numbers")
+    st.write(f"**Operator P/N**: `10250T{operator_code}{color_code}`")
+    st.write(f"**Contact Block P/N**: `10250T{circuit_code}`")
+
+def decode_illuminated_pushbutton(catalog_number):
+    # TODO: Implement decoding logic for illuminated pushbuttons
+    st.warning("Decoder for Illuminated Pushbuttons is not implemented yet.")
+
+def decode_pushpull(catalog_number):
+    # TODO: Implement decoding logic for push-pulls
+    st.warning("Decoder for Push-Pulls is not implemented yet.")
+
+# -------------------------------
+# Streamlit UI
+# -------------------------------
+st.title("🔍 10250T Catalog Number Decoder")
+
+product_type = st.selectbox("Select Product Type", [
+    "Non-Illuminated Pushbutton",
+    "Illuminated Pushbutton",
+    "Push-Pull",
+    "Indicating Light",
+    "PresTest",
+    "Master Test"
+])
+
+catalog_input = st.text_input("Enter a 10250T catalog number (e.g., 10250T112-1):")
+
+if catalog_input:
+    if product_type == "Non-Illuminated Pushbutton":
+        decode_non_illuminated_pushbutton(catalog_input)
+    elif product_type == "Illuminated Pushbutton":
+        decode_illuminated_pushbutton(catalog_input)
+    elif product_type == "Push-Pull":
+        decode_pushpull(catalog_input)
+    else:
+        st.warning(f"Decoder for {product_type} is not implemented yet.")
