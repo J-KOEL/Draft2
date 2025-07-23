@@ -12,6 +12,7 @@ product_type = st.selectbox("Select product type:", [
     "Non-Illuminated Pushbutton",
     "Illuminated Pushbutton (LED)",
     "Illuminated Pushbutton (Incandescent)"
+    "Illuminated Push-Pull (Incandescent)"
 ])
 
 catalog_input = st.text_input("Enter a 10250T catalog number:")
