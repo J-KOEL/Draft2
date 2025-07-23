@@ -3,10 +3,10 @@ import pandas as pd
 from utils import load_csv_dict, load_alternate_map
 
 def load_data():
-    operator_lookup = load_csv_dict("NonIlluminatedPushbuttonOperator 5.csv")
-    color_lookup = load_csv_dict("NonIlluminatedPushbuttonButtonColor 5.csv")
-    circuit_lookup = load_csv_dict("Circuit 17.csv")
-    alt_map = load_alternate_map("AlternateCatalogNumbers 2.csv")
+    operator_lookup = load_csv_dict("NonIlluminatedPushbuttonOperator.csv")
+    color_lookup = load_csv_dict("NonIlluminatedPushbuttonButtonColor.csv")
+    circuit_lookup = load_csv_dict("Circuit.csv")
+    alt_map = load_alternate_map("AlternateCatalogNumbers.csv")
     return operator_lookup, color_lookup, circuit_lookup, alt_map
 
 def decode(catalog_number, operator_lookup, color_lookup, circuit_lookup, alt_map):
