@@ -24,10 +24,10 @@ def load_all_data():
         alt_map = {}
 
     # Load LED mappings
-    led_light_unit_df = pd.read_csv("IlluminatedPushbuttonLEDLightUnit 8.csv", skiprows=1)
-    led_lens_color_df = pd.read_csv("IlluminatedPushbuttonLEDLensColor 8.csv")
-    led_voltage_df = pd.read_csv("IlluminatedPushbuttonLEDVoltage 9.csv")
-    led_circuit_df = pd.read_csv("Circuit 16.csv")
+    led_light_unit_df = pd.read_csv("IlluminatedPushbuttonLEDLightUnit.csv", skiprows=1)
+    led_lens_color_df = pd.read_csv("IlluminatedPushbuttonLEDLensColor.csv")
+    led_voltage_df = pd.read_csv("IlluminatedPushbuttonLEDVoltage.csv")
+    led_circuit_df = pd.read_csv("Circuit.csv")
 
     led_light_unit_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in led_light_unit_df.iterrows()}
     led_lens_color_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in led_lens_color_df.iterrows()}
@@ -35,8 +35,8 @@ def load_all_data():
     led_circuit_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in led_circuit_df.iterrows()}
 
     # Load Incandescent mappings
-    inc_light_unit_df = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit 6.csv")
-    inc_lens_color_df = pd.read_csv("illuminatedPushbuttonIncandescentLensColor 6.csv")
+    inc_light_unit_df = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit.csv")
+    inc_lens_color_df = pd.read_csv("illuminatedPushbuttonIncandescentLensColor.csv")
     inc_circuit_df = pd.read_csv("Circuit 15.csv")
 
     inc_light_unit_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in inc_light_unit_df.iterrows()}
