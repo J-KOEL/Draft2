@@ -4,9 +4,9 @@ import pandas as pd
 # Load Non-Illuminated Pushbutton data
 @st.cache_data
 def load_non_illuminated_data():
-    operator_df = pd.read_csv("NonIlluminatedPushbuttonOperator.csv")
-    color_df = pd.read_csv("NonIlluminatedPushbuttonButtonColor.csv")
-    circuit_df = pd.read_csv("Circuit.csv")
+    operator_df = pd.read_csv("NonIlluminatedPushbuttonOperator 5.csv")
+    color_df = pd.read_csv("NonIlluminatedPushbuttonButtonColor 5.csv")
+    circuit_df = pd.read_csv("Circuit 17.csv")
     alt_df = pd.read_csv("AlternateCatalogNumbers 2.csv")
 
     operator_dict = {str(v).strip(): str(k).strip() for k, v in zip(operator_df['Label'], operator_df['Code'])}
@@ -25,9 +25,9 @@ def load_non_illuminated_data():
 # Load LED Pushbutton data
 @st.cache_data
 def load_led_data():
-    light_unit_df = pd.read_csv("IlluminatedPushbuttonLEDLightUnit.csv", skiprows=1)
-    lens_color_df = pd.read_csv("IlluminatedPushbuttonLEDLensColor.csv")
-    voltage_df = pd.read_csv("IlluminatedPushbuttonLEDVoltage.csv")
+    light_unit_df = pd.read_csv("IlluminatedPushbuttonLEDLightUnit 8.csv", skiprows=1)
+    lens_color_df = pd.read_csv("IlluminatedPushbuttonLEDLensColor 8.csv")
+    voltage_df = pd.read_csv("IlluminatedPushbuttonLEDVoltage 9.csv")
     circuit_df = pd.read_csv("Circuit 16.csv")
 
     light_unit_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in light_unit_df.iterrows()}
@@ -40,9 +40,9 @@ def load_led_data():
 # Load Incandescent Pushbutton data
 @st.cache_data
 def load_incandescent_data():
-    light_unit_df = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit.csv")
-    lens_color_df = pd.read_csv("illuminatedPushbuttonIncandescentLensColor.csv")
-    circuit_df = pd.read_csv("Circuit.csv")
+    light_unit_df = pd.read_csv("IlluminatedPushbuttonIncandescentLightUnit 6.csv")
+    lens_color_df = pd.read_csv("illuminatedPushbuttonIncandescentLensColor 6.csv")
+    circuit_df = pd.read_csv("Circuit 15.csv")
 
     light_unit_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in light_unit_df.iterrows()}
     lens_color_dict = {str(row['Code']).strip(): str(row['Label']).strip() for _, row in lens_color_df.iterrows()}
