@@ -3,7 +3,7 @@ import streamlit as st
 import non_illuminated
 import led
 import incandescent
-import illuminated_pushpull
+import incandescent_pushpull
 
 
 st.title("🔍 10250T Catalog Number Decoder")
