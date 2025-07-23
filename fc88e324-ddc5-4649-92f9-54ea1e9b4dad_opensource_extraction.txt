@@ -1,0 +1,9 @@
+Sheet: Circuit 18.csv
+[5 rows x 2 columns]
+Column names: ,Label,Code
+0,1NO-1NC,1
+1,2NO,2
+2,2NC,3
+3,1NC,51
+4,1NO,53
+
