@@ -3,6 +3,7 @@ import streamlit as st
 import incandescent_pushbutton
 import led_pushbutton
 import non_illuminated
+import illuminated_pushpull
 
 
 
