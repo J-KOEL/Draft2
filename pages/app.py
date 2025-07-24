@@ -29,7 +29,7 @@ if catalog_input:
         light_unit_lookup, lens_color_lookup, circuit_lookup = incandescent.load_data()
         result = incandescent.decode(catalog_input, light_unit_lookup, lens_color_lookup, circuit_lookup)
     elif product_type == "Illuminated Push-Pull (Incandescent)":
-        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup = pushpull_data
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup = pushpull.load_data()
         result = illuminated_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup)
 
     if result:
