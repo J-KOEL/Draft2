@@ -2,8 +2,8 @@
 
 
 import streamlit as st
-import incandescent
-import led
+import incandescent_pushbutton
+import led_pushbutton
 import non_illuminated
 
 
