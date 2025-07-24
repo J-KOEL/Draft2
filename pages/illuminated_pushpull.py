@@ -10,7 +10,7 @@ def load_data():
 
 def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup):
     normalized = catalog_number.replace("-", "").strip().upper()
-    if normalized.startswith("10250T") and len(normalized) > 11
+    if normalized.startswith("10250T") and len(normalized) > 11:
         code_part = normalized[6:]
         operator_code = code_part[:1]
         light_unit_code = code_part[1:3]
