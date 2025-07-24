@@ -12,6 +12,7 @@ product_type = st.selectbox("Select product type:", [
     "Non-Illuminated Pushbutton",
     "Illuminated Pushbutton (LED)",
     "Illuminated Pushbutton (Incandescent)"
+    "Illuminated Push-Pull (Incandescent)"
 ])
 
 catalog_input = st.text_input("Enter a 10250T catalog number:")
@@ -26,6 +27,9 @@ if catalog_input:
     elif product_type == "Illuminated Pushbutton (Incandescent)":
         light_unit_lookup, lens_color_lookup, circuit_lookup = incandescent.load_data()
         result = incandescent.decode(catalog_input, light_unit_lookup, lens_color_lookup, circuit_lookup)
+    elif product_type == "Illuminated Push-Pull (Incandescent)":
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup = pushpull_data
+        result = illuminated_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup)
 
     if result:
         st.markdown("### ✅ Decoded Result")
