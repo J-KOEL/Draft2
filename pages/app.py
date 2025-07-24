@@ -11,7 +11,7 @@ st.title("🔍 10250T Catalog Number Decoder")
 product_type = st.selectbox("Select product type:", [
     "Non-Illuminated Pushbutton",
     "Illuminated Pushbutton (LED)",
-    "Illuminated Pushbutton (Incandescent)"
+    "Illuminated Pushbutton (Incandescent)",
     "Illuminated Push-Pull (Incandescent)"
 ])
 
