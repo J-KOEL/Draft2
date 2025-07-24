@@ -26,20 +26,20 @@ if catalog_input:
         operator_lookup, color_lookup, circuit_lookup, alt_map = non_illuminated.load_data()
         result = non_illuminated.decode(catalog_input, operator_lookup, color_lookup, circuit_lookup, alt_map)
     elif product_type == "Illuminated Pushbutton (LED)":
-        light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup = led.load_data()
-        result = led.decode(catalog_input, light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup)
+        light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup = led_pushbutton.load_data()
+        result = led_pushbutton.decode(catalog_input, light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup)
     elif product_type == "Illuminated Pushbutton (Incandescent)":
-        light_unit_lookup, lens_color_lookup, circuit_lookup = incandescent.load_data()
-        result = incandescent.decode(catalog_input, light_unit_lookup, lens_color_lookup, circuit_lookup)
+        light_unit_lookup, lens_color_lookup, circuit_lookup = incandescent_pushbutton.load_data()
+        result = incandescent_pushbutton.decode(catalog_input, light_unit_lookup, lens_color_lookup, circuit_lookup)
     elif product_type == "Illuminated Push-Pull (Incandescent)":
-        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup = illuminated_pushpull.load_data()
-        result = illuminated_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup)
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup = incandescent_pushpull.load_data()
+        result = incandescent_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup)
     elif product_type == "Non-Illuminated Push-Pull":
         operator_lookup, button_lookup, circuit_lookup = non_illuminated_pushpull.load_data()
         result = non_illuminated_pushpull.decode(catalog_input, operator_lookup, button_lookup, circuit_lookup)
     elif product_type == "LED Push-Pull":
-        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup = illuminated_pushpull_led.load_data()
-        result = illuminated_pushpull_led.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup)
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup = led_pushpull.load_data()
+        result = led_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup)
 
 
 
