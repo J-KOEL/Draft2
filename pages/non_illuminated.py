@@ -22,7 +22,8 @@ def decode(catalog_number, operator_lookup, color_lookup, circuit_lookup, alt_ma
             circuit_code = code_part[3:]
 
             return {
-                "Operator Type": operator_lookup.get(operator_code, "Unknown Operator Code"),
+                st.markdown("### Decoded Result")
+                st.write{"Operator Type": operator_lookup.get(operator_code, "Unknown Operator Code")},
                 "Button Color": color_lookup.get(color_code, "Unknown Color Code"),
                 "Circuit Type": circuit_lookup.get(circuit_code, "Unknown Circuit Code"),
                 "Operator P/N": f"10250T{operator_code}{color_code}",
