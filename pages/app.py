@@ -37,7 +37,7 @@ if catalog_input:
     elif product_type == "Non-Illuminated Push-Pull":
         operator_lookup, button_lookup, circuit_lookup = non_illuminated_pushpull.load_data()
         result = non_illuminated_pushpull.decode(catalog_input, operator_lookup, button_lookup, circuit_lookup)
-    elif product_type == "Illuminated Push-Pull (LED)":
+    elif product_type == "LED Push-Pull":
         operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup = illuminated_pushpull_led.load_data()
         result = illuminated_pushpull_led.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup)
 
