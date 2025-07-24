@@ -12,10 +12,17 @@ def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, circ
     normalized = catalog_number.replace("-", "").strip().upper()
     if normalized.startswith("10250T") and len(normalized) > 11:
         code_part = normalized[6:]
-        operator_code = code_part[:1]
-        light_unit_code = code_part[1:3]
-        lens_code = code_part[3:6]
-        circuit_code = code_part[6:]
+
+        if code_part.startswith("1"):
+            operator_code = code_part[:2]
+            light_unit_code = code_part[2:4]
+            lens_code = code_part[4:7]
+            circuit_code = code_part[7:]
+        else:
+            operator_code = code_part[:1]
+            light_unit_code = code_part[1:3]
+            lens_code = code_part[3:6]
+            circuit_code = code_part[6:]
 
         return {
             "Operator Type": operator_lookup.get(operator_code, "Unknown Operator Code"),
