@@ -1,6 +1,4 @@
 
-
-
 import streamlit as st
 import incandescent_pushbutton
 import led_pushbutton
