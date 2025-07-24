@@ -10,8 +10,8 @@ def decode(catalog_number, operator_lookup, button_lookup, circuit_lookup):
     normalized = catalog_number.replace("-", "").strip().upper()
     if normalized.startswith("10250T") and len(normalized) > 9:
         code_part = normalized[6:]
-        operator_code = code_part[:2]
-        button_code = code_part[2:5]   
+        operator_code = code_part[:1]
+        button_code = code_part[1:4]   
         circuit_code = code_part[5:]   
 
         return {
