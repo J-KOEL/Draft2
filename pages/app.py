@@ -5,6 +5,7 @@ import led_pushbutton
 import non_illuminated
 import incandescent_pushpull
 import non_illuminated_pushpull
+import led_pushpull
 
 
 st.title("🔍 10250T Catalog Number Decoder")
@@ -14,7 +15,8 @@ product_type = st.selectbox("Select product type:", [
     "Illuminated Pushbutton (LED)",
     "Illuminated Pushbutton (Incandescent)",
     "Illuminated Push-Pull (Incandescent)",
-    "Non-Illuminated Push-Pull"
+    "Non-Illuminated Push-Pull",
+    "LED Push-Pull"
 ])
 
 catalog_input = st.text_input("Enter a 10250T catalog number:")
@@ -35,6 +37,10 @@ if catalog_input:
     elif product_type == "Non-Illuminated Push-Pull":
         operator_lookup, button_lookup, circuit_lookup = non_illuminated_pushpull.load_data()
         result = non_illuminated_pushpull.decode(catalog_input, operator_lookup, button_lookup, circuit_lookup)
+    elif product_type == "Illuminated Push-Pull (LED)":
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup = illuminated_pushpull_led.load_data()
+        result = illuminated_pushpull_led.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup)
+
 
 
     if result:
