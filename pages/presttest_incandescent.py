@@ -1,8 +1,8 @@
 from utils import load_csv_dict
 
 def load_data():
-    light_unit_lookup = load_csv_dict("PrestTestIncandescentLightUnit 2.csv")
-    lens_lookup = load_csv_dict("PrestTestIncandescentLens 2.csv")
+    light_unit_lookup = load_csv_dict("PrestTestIncandescentLightUnit.csv")
+    lens_lookup = load_csv_dict("PrestTestIncandescentLens.csv")
     return light_unit_lookup, lens_lookup
 
 def decode(catalog_number, light_unit_lookup, lens_lookup):
