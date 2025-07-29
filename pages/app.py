@@ -8,7 +8,7 @@ import led_pushpull
 import standard_indicating_incandescent
 import standard_indicating_led
 import presttest_incandescent
-import presttest_led  # ✅ New import
+import presttest_led  
 
 st.title("🔍 10250T Catalog Number Decoder")
 
@@ -22,7 +22,7 @@ product_type = st.selectbox("Select product type:", [
     "Standard Indicating Light Incandescent",
     "Standard Indicating Light LED",
     "PresTest Incandescent",
-    "PresTest LED"  # ✅ New option
+    "PresTest LED"  
 ])
 
 catalog_input = st.text_input("Enter a 10250T catalog number:")
