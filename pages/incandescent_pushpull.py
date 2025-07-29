@@ -30,8 +30,8 @@ def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, circ
             "Lens": lens_lookup.get(lens_code, "Unknown Lens Code"),
             "Circuit Type": circuit_lookup.get(circuit_code, "Unknown Circuit Code"),
             "Operator P/N": f"10250T{operator_code}",
-            "Light Unit P/N": light_unit_code,
-            "Lens P/N": lens_code,
+            "Light Unit P/N": f"10250T{light_unit_code}",
+            "Lens P/N": f"10250T{lens_code}",
             "Contact Block P/N": f"10250T{circuit_code}"
         }
     return None
