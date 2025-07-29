@@ -1,7 +1,7 @@
 from utils import load_csv_dict
 
 def load_data():
-    light_unit_lookup = load_csv_dict("PrestTestLEDLightunit .csv")
+    light_unit_lookup = load_csv_dict("PrestTestLEDLightunit.csv")
     lens_lookup = load_csv_dict("PrestTestLEDLens.csv")
     voltage_lookup = load_csv_dict("IndicatinglightLEDvoltage.csv")
     return light_unit_lookup, lens_lookup, voltage_lookup
