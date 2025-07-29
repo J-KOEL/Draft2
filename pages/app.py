@@ -6,7 +6,7 @@ import non_illuminated
 import incandescent_pushpull
 import non_illuminated_pushpull
 import led_pushpull
-import incandescent_indicating_light
+import standard_indicating_incandescent
 
 st.title("🔍 10250T Catalog Number Decoder")
 
