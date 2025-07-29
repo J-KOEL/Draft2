@@ -4,11 +4,12 @@ def load_data():
     operator_lookup = load_csv_dict("PushPullOperator.csv")
     light_unit_lookup = load_csv_dict("IlluminatedPushPullLEDLightUnit.csv")
     lens_lookup = load_csv_dict("IlluminatedPushPullLEDlens.csv")
+    lens_reference = load_csv_dict("LEDPushPullLens reference.csv")
     circuit_lookup = load_csv_dict("Circuit.csv")
     voltage_lookup = load_csv_dict("IlluminatedPushPullLLEDVoltage.csv")
     return operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup
 
-def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup):
+def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, lens_reference, circuit_lookup, voltage_lookup):
     normalized = catalog_number.replace("-", "").strip().upper()
     if normalized.startswith("10250T") and len(normalized) > 12:
         code_part = normalized[6:]
