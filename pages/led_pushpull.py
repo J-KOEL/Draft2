@@ -33,7 +33,7 @@ def decode(catalog_number, operator_lookup, light_unit_lookup, lens_lookup, circ
             "Circuit": circuit_lookup.get(circuit_code, "Unknown Circuit"),
             "Voltage": voltage_lookup.get(voltage_code, "Unknown Voltage"),
             "Operator P/N": f"10250T{operator_code}",
-            "Light Unit P/N": light_unit_code,
+            "Light Unit P/N": f"10250T{light_unit_code}",
             "Lens P/N": lens_code,
             "Contact Block P/N": f"10250T{circuit_code}",
             "Voltage Code": voltage_code
