@@ -25,7 +25,7 @@ def decode(catalog_number, operator_lookup, button_lookup, circuit_lookup):
             "Button": button_lookup.get(button_code, "Unknown Button"),
             "Circuit": circuit_lookup.get(circuit_code, "Unknown Circuit"),
             "Operator P/N": f"10250T{operator_code}",
-            "Button P/N": button_code,
+            "Button P/N": f"10250T{button_code}",
             "Contact Block P/N": f"10250T{circuit_code}"
         }
     return None
