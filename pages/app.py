@@ -6,7 +6,8 @@ import incandescent_pushpull
 import non_illuminated_pushpull
 import led_pushpull
 import standard_indicating_incandescent
-import standard_indicating_led 
+import standard_indicating_led
+import presttest_incandescent
 
 st.title("🔍 10250T Catalog Number Decoder")
 
@@ -18,7 +19,8 @@ product_type = st.selectbox("Select product type:", [
     "Non-Illuminated Push-Pull",
     "LED Push-Pull",
     "Standard Indicating Light Incandescent",
-    "Standard Indicating Light LED" 
+    "Standard Indicating Light LED",
+    "PresTest Incandescent"
 ])
 
 catalog_input = st.text_input("Enter a 10250T catalog number:")
@@ -48,6 +50,9 @@ if catalog_input:
     elif product_type == "Standard Indicating Light LED":
         light_unit_lookup, lens_lookup, voltage_lookup = standard_indicating_led.load_data()
         result = standard_indicating_led.decode(catalog_input, light_unit_lookup, lens_lookup, voltage_lookup)
+    elif product_type == "PresTest Incandescent":
+        light_unit_lookup, lens_lookup = presttest_incandescent.load_data()
+        result = presttest_incandescent.decode(catalog_input, light_unit_lookup, lens_lookup)
 
     if result:
         st.markdown("### ✅ Decoded Result")
