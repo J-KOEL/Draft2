@@ -1,3 +1,4 @@
+
 import streamlit as st
 import incandescent_pushbutton
 import led_pushbutton
@@ -5,6 +6,7 @@ import non_illuminated
 import incandescent_pushpull
 import non_illuminated_pushpull
 import led_pushpull
+
 
 st.title("🔍 10250T Catalog Number Decoder")
 
@@ -36,8 +38,10 @@ if catalog_input:
         operator_lookup, button_lookup, circuit_lookup = non_illuminated_pushpull.load_data()
         result = non_illuminated_pushpull.decode(catalog_input, operator_lookup, button_lookup, circuit_lookup)
     elif product_type == "LED Push-Pull":
-        operator_lookup, light_unit_lookup, lens_lookup, lens_reference, circuit_lookup, voltage_lookup = led_pushpull.load_data()
-        result = led_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, lens_reference, circuit_lookup, voltage_lookup)
+        operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup = led_pushpull.load_data()
+        result = led_pushpull.decode(catalog_input, operator_lookup, light_unit_lookup, lens_lookup, circuit_lookup, voltage_lookup)
+
+
 
     if result:
         st.markdown("### ✅ Decoded Result")
