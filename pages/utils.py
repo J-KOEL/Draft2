@@ -1,9 +1,9 @@
 import pandas as pd
 
-def load_csv_dict(file_path, key_col="Code", value_col=None):
+def load_csv_dict(file_path, key_col=None, value_col=None):
     df = pd.read_csv(file_path)
 
-    # Nested dictionary for lens color files
+    # Case 1: Nested dictionary for lens color files
     if set(['Code', 'Color', 'PartNumber']).issubset(df.columns):
         return {
             str(row['Code']).strip(): {
@@ -13,8 +13,8 @@ def load_csv_dict(file_path, key_col="Code", value_col=None):
             for _, row in df.iterrows()
         }
 
-    # If value_col is explicitly provided
-    if value_col:
+    # Case 2: Explicit key-value columns provided
+    if key_col and value_col:
         if key_col not in df.columns or value_col not in df.columns:
             raise ValueError(f"Expected columns '{key_col}' and '{value_col}' in {file_path}. Found: {df.columns.tolist()}")
         return {
@@ -22,7 +22,14 @@ def load_csv_dict(file_path, key_col="Code", value_col=None):
             for _, row in df.iterrows()
         }
 
-    # If value_col is not provided, try to infer it
+    # Case 3: Default to 'Code' and 'Label' if they exist
+    if 'Code' in df.columns and 'Label' in df.columns:
+        return {
+            str(row['Code']).strip(): str(row['Label']).strip()
+            for _, row in df.iterrows()
+        }
+
+    # Case 4: Auto-detect if exactly two columns
     if len(df.columns) == 2:
         key_col, value_col = df.columns
         return {
