@@ -1,10 +1,10 @@
 from utils import load_csv_dict
 
 def load_data():
-    light_unit_lookup = load_csv_dict("IlluminatedPushbuttonLEDLightUnit.csv")
+    light_unit_lookup = load_csv_dict("IlluminatedPushbuttonLEDLightUnit.csv", value_col="Label")
     lens_color_lookup = load_csv_dict("IlluminatedPushbuttonLEDlensColorProductNumber.csv")
-    voltage_lookup = load_csv_dict("IlluminatedPushbuttonLEDVoltage.csv")
-    circuit_lookup = load_csv_dict("Circuit.csv")
+    voltage_lookup = load_csv_dict("IlluminatedPushbuttonLEDVoltage.csv", value_col="Label")
+    circuit_lookup = load_csv_dict("Circuit.csv", value_col="Label")
     return light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup
 
 def decode(catalog_number, light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup):
