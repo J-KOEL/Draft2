@@ -1,18 +1,19 @@
-﻿RD,C47
-ED,C53
-GD,C48
-LD,C49
-AD,C50
-WD,C51
-CD,C52
-RS,C57
-ES,C63
-GS,C58
-LS,C59
-AS,C64
-YS,C60
-WS,C61
-CS,C62
-RH,C65
-GH,C66
-AH,C67
+﻿Code,Color,PartNumber
+RD,Red 40 mm ,10250TC47
+ED,Red 40 mm E STOP,10250TC53
+GD,Green 40 mm,10250TC48
+LD,Blue 40 mm ,10250TC49
+AD,Amber 40 mm,10250TC50
+WD,White 40 mm,10250TC51
+CD,Red side light ,10250TC52
+RS,Red side light E STOP,10250TC57
+ES,Green side light,10250TC63
+GS,Blue side light,10250TC58
+LS,Amber side light,10250TC59
+AS,Yellow side light,10250TC64
+YS,White side light,10250TC60
+WS,Red heavy-duty,10250TC61
+CS,Green heavy-duty,10250TC62
+RH,Amber heavy duty,10250TC65
+GH,,10250TC66
+AH,,10250TC67
