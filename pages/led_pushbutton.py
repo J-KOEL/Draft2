@@ -32,22 +32,21 @@ def decode(catalog_number, light_unit_lookup, lens_color_lookup, voltage_lookup,
             "Contact Block P/N": f"10250T{circuit_code}"
         }
     return None
-
-# App layout
+# Streamlit UI
 st.set_page_config(page_title="10250T Catalog Decoder", layout="centered")
 st.markdown("<h2 style='color:#2c3e50;'>🔍 10250T Illuminated Pushbutton Decoder</h2>", unsafe_allow_html=True)
 
 # Load lookup tables
 light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup = load_data()
 
-# Input section
+# Sidebar input
 with st.sidebar:
     st.header("🧪 Try It Out")
     catalog_number = st.text_input("Enter Catalog Number", placeholder="e.g. 10250T1234ABCD")
     if st.button("Use Sample"):
         catalog_number = "10250T1234ABCD"
 
-# Decode and display
+# Decode and display results
 if catalog_number:
     decoded = decode(catalog_number, light_unit_lookup, lens_color_lookup, voltage_lookup, circuit_lookup)
     if decoded:
