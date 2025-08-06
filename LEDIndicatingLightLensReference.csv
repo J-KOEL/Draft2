@@ -1,4 +1,5 @@
-﻿RP,Red (Glass),10250TC1N
+Code,Color,Part Number
+RP,Red (Glass),10250TC1N
 GP,Green (Plastic),10250TC2N
 YP,Yellow (Plastic),10250TC3N
 WP,White (Plastic),10250TC6N
@@ -9,3 +10,4 @@ GG,Green (Glass),10250TC8N
 WG,White (Glass),10250TC12N
 LG,Blue (Glass),10250TC10N
 AG,Amber (Glass),10250TC9N
+
