@@ -21,6 +21,6 @@ def decode(catalog_number, light_unit_lookup, lens_lookup, voltage_lookup):
             "Lens Color": lens_lookup.get(lens_code, "Unknown Lens Color"),
             "Voltage": voltage_lookup.get(voltage_code, "Unknown Voltage"),
             "Light Unit P/N": f"10250T{light_unit_code}",
-            "Lens P/N": lens_info.get("PartNumber", Unknown Lens P/N)
+            "Lens P/N": lens_info.get("PartNumber", "Unknown Lens P/N")
         }
     return None
